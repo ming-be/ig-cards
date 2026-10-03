@@ -1,0 +1,38 @@
+name: 인스타 예약 발행
+
+# PC 가 꺼져 있어도 GitHub 이 대신 발행한다. 15분마다 예약된 게시물이 있는지 본다.
+# (GitHub 의 예약 실행은 몇 분 늦을 수 있다 — 발행 시각이 ±15분 정도 달라질 수 있음)
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:        # 수동 실행 버튼
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publish
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: 예약 확인 후 발행
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python scripts/publish.py
+
+      - name: 발행한 사진 지우고 기록 남기기
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then echo "바뀐 내용 없음"; exit 0; fi
+          git config user.name "ig-auto"
+          git config user.email "actions@users.noreply.github.com"
+          # 과거 기록(사진)이 쌓이지 않도록 기록 없는 새 커밋으로 덮어쓴다
+          git checkout --orphan clean
+          git add -A
+          git commit -q -m "발행 완료 후 정리 $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -q -f origin clean:main
