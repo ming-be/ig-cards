@@ -1,0 +1,15 @@
+{
+ "id": "20261023-005408-news",
+ "title": "Leica 소식: New RTC 펌웨어 v1.2.0·PinPoint 5.1.1·X-PAD 포트폴리오",
+ "kind": "news",
+ "caption": "New RTC 펌웨어에 한국어가 들어왔습니다.\n\nLeica RTC 시리즈 펌웨어 v1.2.0이 2026년 9월 15일 공개되었습니다. 스캐너 상태 LED를 켜고 끌 수 있으며, 한국어를 포함한 17개 인터페이스 언어가 추가되었습니다.\n\n데이터 불러오기에는 Cyclone REGISTER 360 PLUS 2026.1.0 이상, 전체 기능 사용에는 Cyclone FIELD 360 7.0.3 이상이 필요합니다.\n\nPinPoint 5.1.1도 10월 19일 나왔습니다. 체커보드·ArUco 타겟 검출이 개선되었고, BLK Transfer Tool로 만든 SAF 파일 불러오기 오류가 수정되었습니다.\n\n또 Leica Geosystems는 9월 14일 X-PAD 포트폴리오와 GNSS 스마트 안테나 GS11을 발표했습니다. 2026년에는 일부 국가에서, 2027년에는 더 넓게 제공될 예정입니다.\n\n업데이트 적용이나 장비 관련 궁금한 점은 (주)블루아이즈로 문의해 주시기 바랍니다.\n\nLeica Geosystems 한국 공식대리점 (주)블루아이즈\n📩 sales@blueyes.kr\n📞 070-8667-4865\n🌐 www.blueyes.kr\n\n#Leica #LeicaGeosystems #블루아이즈 #3D스캐닝 #레이저스캐너 #NewRTC #RTC500 #CycloneREGISTER360PLUS #PinPoint #XPAD",
+ "publish_at": "2026-10-25T05:39:45Z",
+ "images": [
+  "queue/20261023-005408-news/01.jpg",
+  "queue/20261023-005408-news/02.jpg",
+  "queue/20261023-005408-news/03.jpg",
+  "queue/20261023-005408-news/04.jpg",
+  "queue/20261023-005408-news/05.jpg",
+  "queue/20261023-005408-news/06.jpg"
+ ]
+}
